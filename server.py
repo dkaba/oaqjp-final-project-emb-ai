@@ -8,9 +8,9 @@ from EmotionDetection.emotion_detection import emotion_detector
 app = Flask("Emotion Detector")
 @app.route("/emotionDetector")
 def sent_detector():
-    ''' This code receives the text from the HTML interface and runs sentiment analysis over it using
-    sentiment_analysis() function. The output returned shows the label and its confidence score for
-    the provided text.'''
+    ''' This code receives the text from the HTML interface and runs sentiment
+    analysis over it using sentiment_analysis() function. The output returned
+    shows the label and its confidence score for the provided text.'''
     text_to_analyze = request.args.get("textToAnalyze")
     emotion_detection = emotion_detector(text_to_analyze)
     # Handle error when dominant_emotion is None
@@ -31,5 +31,3 @@ def render_index_page():
 
 if __name__ == "__main__":
     app.run(host="127.0.0.1", port=5000)
-
-
